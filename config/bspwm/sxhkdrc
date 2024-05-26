@@ -4,183 +4,182 @@
 #  ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║██╔══██╗██║     
 #  ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝██║  ██║╚██████╗
 #  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝
-#	z0mbi3			https://github.com/gh0stzk/dotfiles
+#	l4ta https://github.com/H3rr3r4Er1k/L4taConfigSO
 #
-
-# Show help
+# CheatSheet   
 F1
-	OpenApps --KeyHelp
+    OpenApps --KeyHelp
 
-#|||----- Applications -----|||#
+#|||----- Aplicaciones -----|||#
 
-# Open Terminal (alacritty)
+# Abrir Terminal (alacritty)
 super + Return
-	OpenApps --terminal
+    OpenApps --terminal
 
-# Open floating Terminal
+# Abrir Terminal flotante
 super + alt + Return
-	OpenApps --floating
+    OpenApps --floating
 
-# Application menu
-super + @space
-	OpenApps --menu
+# Menú de aplicaciones
+super + @espacio
+    OpenApps --menu
 
 #####
 
-# Apps (browser, editor, filemanager)
+# Aplicaciones (navegador, editor, gestor de archivos)
 shift + alt + {b,g,n}
-	OpenApps {--browser,--editor,--filemanager}
+    OpenApps {--navegador,--editor,--gestorarchivos}
 
-# Terminal apps (ranger, nvim, ncmpcpp)
+# Aplicaciones de Terminal (ranger, nvim, ncmpcpp)
 shift + alt + {r,v,k}
-	OpenApps {--ranger,--nvim,--music}
+    OpenApps {--ranger,--nvim,--musica}
 
 # Pavucontrol
 shift + alt + p
-	OpenApps --soundcontrol
+    OpenApps --controlaudio
 
 
-#|||----- System Keybindings -----|||#
+#|||----- Teclas del sistema -----|||#
 
-# Theme Selector
-alt + @space
-	RiceSelector
+# Selector de tema
+alt + @espacio
+    RiceSelector
 
-#Terminal Selector
+# Selector de Terminal
 super + alt + t
-	Term --selecterm
+    Term --selecterm
 
 # jgmenu
-~button3
-  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/scripts/menu.txt --config-file=~/.config/bspwm/jgmenurc
+~boton3
+    xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/scripts/menu.txt --config-file=~/.config/bspwm/jgmenurc
 
 # Scratchpad
 super + alt + o
-	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
+    tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
 
-# Power off, Reboot, Log out, Lockscreen, kill an app
+# Apagar, Reiniciar, Cerrar sesión, Bloquear pantalla, cerrar una aplicación
 ctrl + super + alt + {p,r,q,l,k}
-	{systemctl poweroff, systemctl reboot,bspc quit,physlock -d,xkill}
+    {systemctl poweroff, systemctl reboot,bspc quit,physlock -d,xkill}
 
-# Hide/Show Bar (Polybar and/or eww)
+# Ocultar/Mostrar Barra (Polybar y/o eww)
 super + alt + {h,u}
-	HideBar {-h,-u}
+    HideBar {-h,-u}
 
-# Change transparency on focused window
-ctrl + alt + {plus,minus,equal}
-	picom-trans {-c -o +3,-c -o -1,-c -d}
+# Cambiar transparencia de la ventana enfocada
+ctrl + alt + {mas,menos,igual}
+    picom-trans {-c -o +3,-c -o -1,-c -d}
 
-# Random wallpaper
+# Fondo de pantalla aleatorio
 super + alt + w
-	WallSelect
+    WallSelect
 
-# Screenshot Now
+# Captura de pantalla ahora
 Print
-	ScreenShoTer --now
+    ScreenShoTer --now
 
-# Screenshot Select
+# Captura de pantalla seleccionada
 ctrl + Print
-	ScreenShoTer --sel
+    ScreenShoTer --sel
 
-# Screenshot in 10s
+# Captura de pantalla en 10s
 alt + Print
-	ScreenShoTer --in10
+    ScreenShoTer --in10
 
-# Screenshot active window
+# Captura de ventana activa
 shift + Print
-	ScreenShoTer --active
+    ScreenShoTer --active
 
-# Manage brightness
+# Control de brillo
 XF86MonBrightness{Up,Down}
     sh Brightness {up,down}
 
-# Volume control
+# Control de volumen
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-	Volume{ --inc, --dec, --toggle}
+    Volume{ --inc, --dec, --toggle}
 
-# Music Control
+# Control de música
 XF86Audio{Next,Prev,Play,Stop}
-	MediaControl {--next,--previous,--toggle,--stop}
+    MediaControl {--next,--previous,--toggle,--stop}
 
 
-#|||----- Bspwm hotkeys -----|||#
+#|||----- Teclas de acceso rápido de Bspwm -----|||#
 
-# Reload BSPWM
+# Recargar BSPWM
 super + alt + r
-	bspc wm -r
+    bspc wm -r
 
-# close and kill
+# Cerrar y matar
 super + {_,shift + }q
-	bspc node -{c,k}
-	
-# Reload Keybindings
+    bspc node -{c,k}
+    
+# Recargar combinaciones de teclas
 super + Escape
-	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' 'The configuration file has been reloaded successfully!'
+    pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' '¡El archivo de configuración se ha recargado correctamente!'
 
 #####
 
-# alternate between the tiled and monocle layout
+# Alternar entre el diseño en mosaico y monocle
 super + m
-	bspc desktop -l next
+    bspc desktop -l next
 
-# set the window state
+# Establecer el estado de la ventana
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+    bspc node -t {mosaico,pseudo_mosaico,flotante,pantalla_completa}
 
-# set the node flags
+# Establecer las banderas de la ventana
 ctrl + alt {m,x,s,p}
-	bspc node -g {marked,locked,sticky,private}
+    bspc node -g {marcada,bloqueada,pegajosa,privada}
 
-# Hide/Unhide Window
+# Ocultar/Mostrar Ventana
 ctrl + alt + h
-	BspHideNode
+    BspHideNode
 
 #####
 
-# rotate desktop
+# Rotar escritorio
 super + r
-	bspc node @/ --rotate {90,-90}
+    bspc node @/ --rotate {90,-90}
 
-# Change focus of the Node or Swap Nodes
-shift + super {_,ctrl + }{Left,Down,Up,Right}
-	bspc node -{f,s} {west,south,north,east}
+# Cambiar el enfoque de la ventana o intercambiar ventanas
+shift + super {_,ctrl + }{Izquierda,Abajo,Arriba,Derecha}
+    bspc node -{f,s} {oeste,sur,norte,este}
 
-# Switch workspace
-super + {Left,Right}
-	bspc desktop -f {prev,next}.local
+# Cambiar de espacio de trabajo
+super + {Izquierda,Derecha}
+    bspc desktop -f {anterior,siguiente}.local
 
-# focus or send to the given desktop
+# Enfocar o enviar a la ventana dada al escritorio
 super + {_,alt + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
-# Send focused Node to workspace directionally
-super + alt + {Left,Right}
-	bspc node -d {prev,next} '--follow'
+# Enviar la ventana enfocada al espacio de trabajo direccionalmente
+super + alt + {Izquierda,Derecha}
+    bspc node -d {anterior,siguiente} '--follow'
 
-# focus the last node/desktop
-super + {comma,Tab}
-	bspc {node,desktop} -f last
+# Enfocar la última ventana/escritorio
+super + {coma,Tabulador}
+    bspc {node,desktop} -f last
 
 #####
 
-# preselect the direction
+# Preseleccionar la dirección
 super + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node -p {oeste,sur,norte,este}
 
-# cancel the preselection for the focused node
-super + alt + space
-	bspc node -p cancel
+# Cancelar la preselección para la ventana enfocada
+super + alt + espacio
+    bspc node -p cancel
 
 #####
-	
-# expand a window
-ctrl + alt {Left,Down,Up,Right}
-	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
+    
+# Expandir una ventana
+ctrl + alt {Izquierda,Abajo,Arriba,Derecha}
+    bspc node -z {izquierda -10 0,abajo 0 10,arriba 0 -10,derecha 10 0}
 
-# contract a window
-ctrl + shift + alt + {Left,Down,Up,Right}
-	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+# Contraer una ventana
+ctrl + shift + alt + {Izquierda,Abajo,Arriba,Derecha}
+    bspc node -z {derecha -10 0,arriba 0 10,abajo 0 -10,izquierda 10 0}
 
-# move a floating window
-alt + shift {Left,Down,Up,Right}
-	bspc node -v {-10 0,0 10,0 -10,10 0}
+# Mover una ventana flotante
+alt + shift {Izquierda,Abajo,Arriba,Derecha}
+    bspc node -v {-10 0,0 10,0 -10,10 0}
